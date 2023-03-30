@@ -10,7 +10,7 @@ public:
 
 	Facultate& operator=(const Facultate& other);
 
-	~Facultate();
+	~Facultate() {};
 
 	void setNume(const string& other);
 
