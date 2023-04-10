@@ -6,7 +6,7 @@ public:
     Base() {
         std::cout << "Base Constructor Called\n";
     }
-    ~Base() {
+    virtual ~Base() {
         std::cout << "Base Destructor called\n";
     }
 };
