@@ -1,79 +1,41 @@
 ﻿#include <iostream>
-using namespace std;
 
-class Facultate {
-public:
-	Facultate()
-	{
-		cout << "Sunt in constructor default" << endl;
-	}
-
-	Facultate(const string& numeParametru)
-	{
-		//numeParametru = "Istorie";
-		//cout << &numeParametru <<endl;
-		cout << "Sunt in constructor cu mai multi parametrii " << nume << endl;
-		nume = numeParametru;
-	}
-
-	Facultate(const Facultate& other)
-		: nume(other.nume)
-	{
-		//numeParametru = "Istorie";
-		//cout << &numeParametru <<endl;
-		cout << "Sunt in constructor de copiere " << nume << endl;
-		//nume = numeParametru;
-	}
-
-	Facultate& operator=(const Facultate& other)
-	{
-		cout << "operator =" << endl;
-		nume = other.nume;
-		return *this;
-	}
-
-	~Facultate()
-	{
-		cout << "destructor Facultate" << endl;
-	}
-
-	void setNume(const string& other)
-	{
-		nume = other;
-	}
-
-	string getNume() const
-	{
-		return nume;
-	}
-
-	friend ostream& operator<<(ostream& os, const Facultate& facultate);
-
+class Baza {
 private:
-	string nume;
+
+   
+protected:
+    int x=7;
+    int y=6;
+    
+public:
+    int z=4;
+    void f1() { std::cout << "f1\n"; }
+    void f3() { std::cout << "f3\n"; }
+    void f2() { std::cout << "f2\n"; }
 };
 
-ostream& operator<<(ostream& os, const Facultate& facultate)
-{
-	os << "Facultatea selectata: " << facultate.nume << endl;
-	return os;
-}
+class Derivata : private Baza {
+public:
+    void g() {
+        f1();
+        f2();
+        f3();
+        std::cout << x << "\n";
+        std::cout << y << "\n";
+        std::cout << z << "\n";
+    }
+};
 
-int main()
-{
-	string param = "FMI";
-	//cout << param <<endl;
-	//cout << &param <<endl;
-
-
-	Facultate facultate1("Istorie");
-	Facultate facultate2;
-	facultate1.setNume("Mate");
-	facultate2.operator=(facultate1);
-
-	cout << facultate2.getNume();
-	//cout << param << endl;
-	//cout<<endl<<facultate1.getNume();
-
-	return 0;
+int main() {
+    Baza b;
+    b.f1();
+    b.f2();
+    b.f3();
+    std::cout << "---\n";
+    Derivata d;
+    d.g();
+    /*d.f1();
+    d.f2();
+    d.f3();*/
 }

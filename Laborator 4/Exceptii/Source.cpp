@@ -2,11 +2,11 @@
 #include <string>
 #include <iostream>
 
-class CustomException : public std::out_of_range {
-public:
-    CustomException(const std::string& msg) : std::out_of_range(msg) {}
-};
-
+//class CustomException : public std::out_of_range {
+//public:
+//    CustomException(const std::string& msg) : std::out_of_range(msg) {}
+//};
+//
 //int main() {
 //    std::string str = "Hello, world!";
 //    try {
@@ -30,7 +30,6 @@ class Fraction {
 private:
     int numerator;
     int denominator;
-
 public:
     Fraction(int num, int den) {
         if (den == 0) {

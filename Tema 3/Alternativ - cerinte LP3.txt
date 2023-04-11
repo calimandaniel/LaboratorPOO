@@ -1,0 +1,15 @@
+Alternativ - Proiect 3 (cerinte)
+
+Detalii / exemple de Design Patterns etc: https://github.com/mcmarius/poo/tree/refacere-materiale/tema-3
+
+
+LP3 - OOP mai avansat (design patterns) și a programării generice.
+
+- minim o funcție șablon și 2 clase șablon (template)
+        adăugați (minim) un atribut de tip T sau care depinde de T
+        adăugați (minim) o funcție membru care să depindă de T (sau de alt parametru template);
+        adăugați (minim) o funcție normală/liberă template; poate să fie friend
+- minim 2 design patterns (daca aveti minim 3, fara singleton, nu mai dati "minitest"); utilizarea acestor design patterns ar trebui să aibă sens.
+- minim o lambda expresie
+- pe cat posibil, smart pointers
+
