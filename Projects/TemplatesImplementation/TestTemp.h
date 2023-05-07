@@ -11,4 +11,4 @@ private:
     T m_Obj;
 };
 
-//#include "TestTemp.cpp.h"
+#include "TestTemp.cpp.h"

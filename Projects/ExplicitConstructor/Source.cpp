@@ -2,7 +2,7 @@
 
 class MyInt {
 public:
-    /*explicit*/ MyInt(int value) : m_value(value) {}
+    explicit MyInt(int value) : m_value(value) {}
 
     int getValue() const {
         return m_value;
