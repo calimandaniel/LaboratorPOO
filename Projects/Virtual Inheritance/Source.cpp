@@ -14,8 +14,8 @@ public:
 };
 
 
-//Derived classes that inherit from the base class has to virtually inherit in order to not call the 
-class B :  public A {
+//Derived classes that inherit from the base class has to virtually inherit in order to not call the base class twice
+class B : virtual public A {
 public:
     B()
     {
@@ -23,7 +23,7 @@ public:
     }
 };
 
-class C :  public A {
+class C : virtual public A {
 public:
     C()
     {
@@ -42,5 +42,5 @@ public:
 int main()
 {
     D object;
-    //object.print();
+    object.print();
 }

@@ -2,6 +2,18 @@
 #include <vector>
 #include <algorithm>
 //
+void MyFunction(int a)
+{
+    std::cout << "Facultate " << a << std::endl;
+}
+
+int main()
+{
+    void(*numeVariabila)(int) = &MyFunction;
+    numeVariabila(3);
+}
+
+//
 //int main() {
 //    auto multiply = [](int a, int b) {
 //        return a * b;
@@ -12,23 +24,23 @@
 //    return 0;
 //}
 
-int main() {
-    int x = 5;
-    int y = 3;
-
-    auto compute = [x, &y](int z) {
-        y *= 2;
-        return x + y + z;
-    };
-
-    int z = 2;
-    std::cout << "Result = " << compute(z) << std::endl;
-    std::cout << "x = " << x << std::endl;
-    std::cout << "y = " << y << std::endl;
-    std::cout << "z = " << z << std::endl;
-
-    return 0;
-}
+//int main() {
+//    int x = 5;
+//    int y = 3;
+//
+//    auto compute = [x, &y](int z) {
+//        y *= 2;
+//        return x + y + z;
+//    };
+//
+//    int z = 2;
+//    std::cout << "Result = " << compute(z) << std::endl;
+//    std::cout << "x = " << x << std::endl;
+//    std::cout << "y = " << y << std::endl;
+//    std::cout << "z = " << z << std::endl;
+//
+//    return 0;
+//}
 
 //int main() {
 //    std::vector<int> vec = { 1, 2, 3, 4, 5 };
