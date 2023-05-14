@@ -1,4 +1,38 @@
 #include <iostream>
+
+
+
+class postare {
+public:
+    void citeste() {}
+    void scrie() {}
+    void modifica() {}
+    void ascunde() {}
+    void sterge() {}
+};
+
+class user {};
+class auth {
+    user u;
+public:
+    auth(const user& u) : u(u) {}
+};
+
+class postare_proxy {
+private:
+    postare p;
+    auth a;
+public:
+    postare_proxy(const postare& p, const auth& a) : p(p), a(a) {}
+    void citeste() {
+       // if (a.are_voie())
+            p.citeste();
+    }
+    // restul functiilor publice din postare (cele de interes) sunt adaugate si in proxy
+};
+
+
+
 /**
  * The Subject interface declares common operations for both RealSubject and the
  * Proxy. As long as the client works with RealSubject using this interface,
